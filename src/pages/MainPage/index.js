@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import NewsCard    from '../../components/NewsCard';
 import HotNewsList from '../../components/HotNewsList';
+import CategoryMenu from '../../components/CategoryMenu';
 import '../../App.css';
 
 const MainPage = () => {
@@ -12,9 +13,10 @@ const MainPage = () => {
 
   return (
     <Container fluid>
+      <CategoryMenu />
       <Row>
         {/* ستون اصلی سمت چپ */}
-        <Col md="10" className="main-column">
+        <Col xs="12" md="10" className="main-column">
           <h2 className="section-title">اخبار روز</h2>
 
           <NewsCard
@@ -31,7 +33,7 @@ const MainPage = () => {
         </Col>
 
         {/* ستون جانبی سمت راست */}
-        <Col md="2" className="side-column">
+        <Col xs="12" md="2" className="side-column">
           <HotNewsList items={hotNews} />
         </Col>
       </Row>
