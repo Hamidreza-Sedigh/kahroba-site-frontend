@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Spinner } from 'reactstrap';
 import CategoryMenu from '../../components/CategoryMenu';
-import NewsCard from '../../components/NewsCard'; // فرض بر اینکه این کامپوننت از قبل داری
-import { getNewsByCategory } from '../../services/api';  // ایمپورت تابع جدید از api.js
+import NewsCard from '../../components/NewsCard';
+import { getNewsByCategory } from '../../services/api';
 
 const CategoryPage = () => {
   const { categoryName } = useParams();
