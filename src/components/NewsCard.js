@@ -1,19 +1,37 @@
 import React from 'react';
 import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import dayjs from 'dayjs';
+import 'dayjs/locale/fa'; // برای نمایش به زبان فارسی
+import relativeTime from 'dayjs/plugin/relativeTime';
 
-const NewsCard = ({ id, title, summary, image }) => {
+dayjs.extend(relativeTime);
+dayjs.locale('fa');
+
+const NewsCard = ({ news }) => {
+  if (!news) return null;
+
+  const {
+    _id,
+    title,
+    description,
+    image, // اگر در مدل موجوده، در غیر این صورت حذفش کنیم
+  } = news;
+
   return (
-    <Link to={`/news/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-      <Card className="h-100 shadow-sm">
-        <img src={image} className="card-img-top" alt={title} />
+    <Link to={`/news/${_id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Card className="shadow-sm mb-3">
+        {image && (
+          <img src={image} className="card-img-top" alt={title} style={{ maxHeight: '200px', objectFit: 'cover' }} />
+        )}
         <CardBody>
           <CardTitle tag="h5">{title}</CardTitle>
-          <CardText>{summary?.slice(0, 100)}...</CardText>
+          <CardText>{description ? description.slice(0, 100) + '...' : 'متن موجود نیست'}</CardText>
         </CardBody>
       </Card>
     </Link>
   );
 };
+
 
 export default NewsCard;

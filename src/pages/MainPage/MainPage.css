@@ -1,0 +1,15 @@
+/* src/pages/MainPage/MainPage.css */
+.rtl {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  .news-list {
+    padding: 1rem;
+  }
+  
+  .sidebar {
+    padding: 1rem;
+    background-color: #f9f9f9;
+  }
+  

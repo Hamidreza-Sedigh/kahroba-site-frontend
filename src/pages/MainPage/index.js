@@ -1,39 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import NewsCard    from '../../components/NewsCard';
-import HotNewsList from '../../components/HotNewsList';
+import { fetchLatestNews } from '../../services/api';
 import CategoryMenu from '../../components/CategoryMenu';
-import '../../App.css';
+import NewsCard from '../../components/NewsCard';
+import HotNewsList from '../../components/HotNewsList';
+import './MainPage.css';
 
 const MainPage = () => {
+  const [latestNews, setLatestNews] = useState([]);
   const hotNews = [
     'زلزله شدید در شمال کشور',
     'نرخ دلار به بالاترین میزان رسید'
   ];
 
+
+  useEffect(() => {
+    const loadNews = async () => {
+      try {
+        const data = await fetchLatestNews();
+        console.log("DATA:", data); // test
+        setLatestNews(data);  // الان آرایه درسته، بدون ارور map
+      } catch (err) {
+        console.error("خطا در دریافت اخبار:", err);
+      }
+    };
+
+    loadNews();
+  }, []);
+  
+
   return (
-    <Container fluid>
-      <CategoryMenu />
+    <Container fluid className="main-page rtl">
+      <CategoryMenu /> {/* منوی دسته‌بندی در بالا */}
       <Row>
-        {/* ستون اصلی سمت چپ */}
-        <Col xs="12" md="10" className="main-column">
-          <h2 className="section-title">اخبار روز</h2>
-
-          <NewsCard
-            image="https://via.placeholder.com/800x400"
-            title="تیتر خبر اول"
-            summary="متنی کوتاه درباره خبر اول جهت آشنایی سریع با موضوع..."
-          />
-
-          <NewsCard
-            image="https://via.placeholder.com/800x400"
-            title="تیتر خبر دوم"
-            summary="خلاصه‌ای از خبر دوم که مخاطب را جذب می‌کند..."
-          />
+        
+        <Col md="9" className="news-list">
+          {latestNews && latestNews.length > 0 ? (
+            latestNews.map((newsItem) => (
+              <NewsCard key={newsItem._id} news={newsItem} />
+            ))
+          ) : (
+            <p>در حال بارگذاری اخبار...</p>
+          )}
         </Col>
 
-        {/* ستون جانبی سمت راست */}
-        <Col xs="12" md="2" className="side-column">
+        <Col md="3" className="sidebar">
           <HotNewsList items={hotNews} />
         </Col>
       </Row>
