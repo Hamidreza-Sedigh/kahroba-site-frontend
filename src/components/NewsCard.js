@@ -15,7 +15,7 @@ const NewsCard = ({ news }) => {
     _id,
     title,
     description,
-    image, // اگر در مدل موجوده، در غیر این صورت حذفش کنیم
+    image
   } = news;
 
   return (

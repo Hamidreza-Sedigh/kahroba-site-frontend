@@ -15,6 +15,7 @@ const CategoryPage = () => {
 
     getNewsByCategory(categoryName)  // استفاده از تابع جدید
       .then((res) => {
+        console.log(res.data)
         setNewsList(res.data);
         setLoading(false);
       })
@@ -36,13 +37,12 @@ const CategoryPage = () => {
         </div>
       ) : (
         <Row>
+          {console.log("NEWS TO RENDER:", newsList)}
           {newsList.map((news) => (
             <Col key={news._id} md="4" className="mb-4">
-              <NewsCard
-                id={news._id}
-                title={news.title}
-                summary={news.description}
-                image={news.image || 'https://via.placeholder.com/800x400'}
+              <NewsCard news ={{
+                ...news
+              }}
               />
             </Col>
           ))}
