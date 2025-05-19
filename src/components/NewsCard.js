@@ -16,7 +16,9 @@ const NewsCard = ({ news }) => {
     _id,
     title,
     description,
-    image
+    image, 
+    category,
+    sourceName
   } = news;
 
   return (
@@ -26,13 +28,54 @@ const NewsCard = ({ news }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
-        <Card className="shadow-sm mb-3 news-card">
-          {image && (
-            <img src={image} className="card-img-top" alt={title} style={{ maxHeight: '200px', objectFit: 'cover' }} />
+        <Card className="shadow-sm mb-3 news-card position-relative">
+          {/* {image ? (
+            <img
+              src={image}
+              className="card-img-top"
+              alt={title}
+              style={{ maxHeight: '200px', objectFit: 'cover' }}
+            />
+          ) : (
+            <div
+              style={{
+                height: '200px',
+                backgroundColor: '#f0f0f0',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#888'
+              }}
+            >
+              تصویر موجود نیست
+            </div>
+          )} */}
+
+          {/* برچسب دسته‌بندی */}
+          {category && (
+            <span 
+              className="badge bg-primary position-absolute top-0 start-0 m-2"
+              style={{ zIndex: 10 }}
+            >      
+              {category}
+            </span>
           )}
-          <CardBody>
-            <CardTitle tag="h5">{title}</CardTitle>
-            <CardText>{description ? description.slice(0, 100) + '...' : 'متن موجود نیست'}</CardText>
+
+          {/* برچسب منبع خبر */}
+          {/* {sourceName && (
+            <span className="badge bg-secondary position-absolute bottom-0 end-0 m-2">
+              {sourceName}
+            </span>
+          )} */}
+
+          <CardBody className="pt-4">
+            <CardTitle tag="h5" className="fs-6">{title}</CardTitle>
+            <CardText className="text-muted fs-6">{description ? description.slice(0, 100) + '...' : 'متن موجود نیست'}</CardText>
+            {sourceName && (
+              <div className="text-end">
+                <span className="badge bg-secondary">{sourceName}</span>
+              </div>
+            )}
           </CardBody>
         </Card>
       </motion.div>
