@@ -4,16 +4,37 @@
 
 @font-face {
   font-family: 'Vazir';
-  src: url('./assets/fonts/Vazir/Vazir-Regular.woff2') format('woff2'),
-       url('./assets/fonts/Vazir/Vazir-Regular.woff') format('woff'),
-       url('./assets/fonts/Vazir/Vazir-Regular.ttf') format('truetype');
+  src: url('/fonts/Vazir-Regular.woff2') format('woff2'),
+       url('/fonts/Vazir-Regular.woff') format('woff'),
+       url('/fonts/Vazir-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Dirooz';
+  src: url('./assets/fonts/Dirooz/Dirooz.woff2') format('woff2'),
+       url('./assets/fonts/Dirooz/Dirooz.woff') format('woff'),
+       url('./assets/fonts/Dirooz/Dirooz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Khat';
+  src: url('./assets/fonts/Khat/persian-khat-khati-02.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
-  font-family: 'Vazir', Tahoma, sans-serif;
-  background-color: #f8f9fa;
+  background-color: yellow !important;
+
+  font-family: 'Khat', 'Dirooz', Tahoma, sans-serif;
+  color: violet  !important;
+  /* background-color: #f8f9fa; */
   direction: rtl;
   text-align: right;
 }
@@ -60,14 +81,8 @@ body {
   border-radius: 8px;
 }
 
-.news-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.news-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+
 
 
 
