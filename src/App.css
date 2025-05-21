@@ -1,42 +1,40 @@
-/* .App {
-  text-align: center;
-} */
-
 @font-face {
   font-family: 'Vazir';
-  src: url('/fonts/Vazir-Regular.woff2') format('woff2'),
-       url('/fonts/Vazir-Regular.woff') format('woff'),
-       url('/fonts/Vazir-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/Vazir/Vazir-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Vazir/Vazir-Regular.woff') format('woff'),
+       url('./assets/fonts/Vazir/Vazir-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
+/* سایر فونت‌ها (در صورت نیاز) */
 @font-face {
   font-family: 'Dirooz';
   src: url('./assets/fonts/Dirooz/Dirooz.woff2') format('woff2'),
        url('./assets/fonts/Dirooz/Dirooz.woff') format('woff'),
        url('./assets/fonts/Dirooz/Dirooz.ttf') format('truetype');
-  font-weight: normal;
   font-style: normal;
+  font-weight: normal;
 }
 
-
-@font-face {
-  font-family: 'Khat';
-  src: url('./assets/fonts/Khat/persian-khat-khati-02.ttf') format('truetype');
-  font-weight: normal;
+/* @font-face {
+  font-family: 'khat';
+  src: url('./assets/fonts/khat/persian-khat-khati-02.ttf') format('truetype');
   font-style: normal;
-}
+  font-weight: normal;
+} */
 
 
 body {
-  background-color: yellow !important;
-
-  font-family: 'Khat', 'Dirooz', Tahoma, sans-serif;
-  color: violet  !important;
-  /* background-color: #f8f9fa; */
+  font-family: 'Vazir', Tahoma, sans-serif;
   direction: rtl;
   text-align: right;
+  background-color: white;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Vazir', Tahoma, sans-serif;
 }
 
 /* نوار بالا */
