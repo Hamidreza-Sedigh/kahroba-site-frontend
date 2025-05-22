@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/fa'; // برای نمایش به زبان فارسی
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { motion } from 'framer-motion';
+import './NewsCard.css';
 
 dayjs.extend(relativeTime);
 dayjs.locale('fa');

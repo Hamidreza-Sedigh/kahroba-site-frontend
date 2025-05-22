@@ -1,74 +1,15 @@
-@font-face {
-  font-family: 'Vazir';
-  src: url('./assets/fonts/Vazir/Vazir-Regular.woff2') format('woff2'),
-       url('./assets/fonts/Vazir/Vazir-Regular.woff') format('woff'),
-       url('./assets/fonts/Vazir/Vazir-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
-/* سایر فونت‌ها (در صورت نیاز) */
-@font-face {
-  font-family: 'Dirooz';
-  src: url('./assets/fonts/Dirooz/Dirooz.woff2') format('woff2'),
-       url('./assets/fonts/Dirooz/Dirooz.woff') format('woff'),
-       url('./assets/fonts/Dirooz/Dirooz.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}
-
-/* @font-face {
-  font-family: 'khat';
-  src: url('./assets/fonts/khat/persian-khat-khati-02.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-} */
-
-
-body {
-  font-family: 'Vazir', Tahoma, sans-serif;
-  direction: rtl;
-  text-align: right;
-  background-color: white;
-  color: #333;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: 'Vazir', Tahoma, sans-serif;
-}
-
-/* نوار بالا */
-.navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* تیترهای بخش‌ها */
 .section-title {
   margin-bottom: 1rem;
   color: #333;
 }
 
-/* کارت‌های اخبار */
-.news-card {
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.news-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* کارت‌های اخبار داغ */
 .hot-news-card {
   margin-bottom: 1rem;
   background-color: #fff3cd;
   border: 1px solid #ffeeba;
 }
 
-/* ستون‌ها */
 .main-column {
   padding-left: 2rem;
 }
@@ -78,36 +19,3 @@ h1, h2, h3, h4, h5 {
   padding: 1rem;
   border-radius: 8px;
 }
-
-
-
-
-
-
-/* Gemini:
-/* 
-.full-width-container {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-}
-
-.full-width-row {
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-
-.left-sidebar {
-  background-color: #f0f0f0;
-  padding: 15px;
-}
-
-.main-content {
-  background-color: #e0e0e0;
-  padding: 15px;
-}
-
-.right-sidebar {
-  background-color: #f0f0f0;
-  padding: 15px;
-} */
-

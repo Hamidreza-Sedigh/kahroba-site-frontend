@@ -49,7 +49,7 @@ const MainPage = () => {
 
   return (
     <Container fluid className="main-page rtl">
-      <CategoryMenu /> {/* منوی دسته‌بندی در بالا */}
+      {/* <CategoryMenu /> */}
       <Row>
         {/* لیست اخبار */}
         <Col md="9" className="news-list">
